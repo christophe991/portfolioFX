@@ -13,9 +13,9 @@ public class DAOFactory {
         return new QualiteDAO(connexion);
     }
 //
-//    public static EditeurDAO getEditeurDAO(){
-//        return new EditeurDAO(connexion);
-//    }
+    public static FormationDAO getFormationDAO(){
+        return new FormationDAO(connexion);
+    }
 //
 //     public static PlateformeDAO getPlateformeDAO() {
 //        return  new PlateformeDAO(connexion);
