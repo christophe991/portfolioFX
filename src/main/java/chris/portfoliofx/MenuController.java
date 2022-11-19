@@ -4,7 +4,12 @@ import chris.portfoliofx.metier.Qualite;
 import chris.portfoliofx.service.ServiceQualite;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class MenuController {
     @FXML
@@ -17,6 +22,14 @@ public class MenuController {
     private Button projetButton;
     @FXML
     private Button merciButton;
+
+    @FXML
+    private Button formationButton;
+
+    @FXML
+    private Button competenceButton;
+    @FXML
+    private Button creationButton;
     private Main main;
     @FXML
     private TableView<Qualite> qualiteTable;
@@ -50,5 +63,62 @@ public class MenuController {
 
     public void setMainApp(Main main) {
         this.main = main;
+    }
+
+    @FXML
+    private void afficherFormation(){
+       try{
+           FXMLLoader loader = new FXMLLoader();
+           loader.setLocation(Main.class.getResource("Formation.fxml"));
+           AnchorPane anchorPane = loader.load();
+           Scene scene = new Scene(anchorPane);
+           Stage stage = new Stage();
+           stage.setTitle("Formations");
+           stage.initModality(Modality.APPLICATION_MODAL);
+           stage.setScene(scene);
+           AfficherFormationController afficherFormationController = loader.getController();
+           afficherFormationController.setStage(stage);
+           stage.showAndWait();
+       }catch (Exception e){
+           e.printStackTrace();
+       }
+    }
+
+    @FXML
+    private void afficherCompetence(){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("Competence.fxml"));
+            AnchorPane anchorPane = loader.load();
+            Scene scene = new Scene(anchorPane);
+            Stage stage = new Stage();
+            stage.setTitle("Compétences et outils");
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(scene);
+            AfficherCompetenceController afficherCompetenceController = loader.getController();
+            afficherCompetenceController.setStage(stage);
+            stage.showAndWait();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void afficherCreation(){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("Creation.fxml"));
+            AnchorPane anchorPane = loader.load();
+            Scene scene = new Scene(anchorPane);
+            Stage stage = new Stage();
+            stage.setTitle("Créations");
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(scene);
+            AfficherCreationController afficherCreationController = loader.getController();
+            afficherCreationController.setStage(stage);
+            stage.showAndWait();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -72,17 +72,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button mnemonicParsing="false" text="Formation" GridPane.rowIndex="1">
+                <Button fx:id="formationButton" mnemonicParsing="false" onAction="#afficherFormation" text="Formation" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="30.0" />
                     </GridPane.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Competances" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Button fx:id="competenceButton" mnemonicParsing="false" onAction="#afficherCompetence" text="Competances" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="20.0" />
                     </GridPane.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Creations" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Button fx:id="creationButton" mnemonicParsing="false" onAction="#afficherCreation" text="Creations" GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="30.0" />
                     </GridPane.margin>
