@@ -28,6 +28,7 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("Menu.fxml"));
             AnchorPane menuLayout = loader.load();
             Scene scene = new Scene(menuLayout, 678, 604);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             primaryStage.setScene(scene);
             MenuController controller = loader.getController();
             controller.setMainApp(this);

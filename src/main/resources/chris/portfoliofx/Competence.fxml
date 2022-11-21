@@ -7,24 +7,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chris.portfoliofx.AfficherCompetenceController">
+<AnchorPane prefHeight="488.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chris.portfoliofx.AfficherCompetenceController">
    <children>
       <Label layoutX="112.0" layoutY="31.0" prefHeight="27.0" prefWidth="306.0" text="Compétences et outils utiliser :">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="39.0" layoutY="100.0" prefHeight="200.0" prefWidth="151.0">
+      <TableView fx:id="technoTable" layoutX="39.0" layoutY="100.0" prefHeight="255.0" prefWidth="204.0">
         <columns>
-          <TableColumn prefWidth="150.0" text="Langages" />
+          <TableColumn fx:id="technoColumn" prefWidth="203.0" text="Langages" />
         </columns>
       </TableView>
-      <TableView layoutX="300.0" layoutY="100.0" prefHeight="200.0" prefWidth="151.0">
+      <TableView fx:id="outilTable" layoutX="300.0" layoutY="100.0" prefHeight="255.0" prefWidth="180.0">
         <columns>
-          <TableColumn prefWidth="150.0" text="Outils" />
+          <TableColumn fx:id="outilColumn" prefWidth="179.0" text="Outils" />
         </columns>
       </TableView>
-      <Button layoutX="220.0" layoutY="335.0" mnemonicParsing="false" text="retour" />
+      <Button fx:id="retourButton" layoutX="216.0" layoutY="397.0" mnemonicParsing="false" onAction="#fermerMenu" text="retour" />
    </children>
 </AnchorPane>

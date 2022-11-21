@@ -8,35 +8,22 @@ import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
 
-public class Qualite {
+public class Creation {
     private Integer id;
     private String nom;
+    private String description;
 
-    private String resume;
-
-    public Qualite() {
+    public Creation() {
     }
 
-    public Qualite(Integer id) {
+    public Creation(Integer id) {
         this.id = id;
     }
 
-    public Qualite(Integer id, String nom, String resume) {
+    public Creation(Integer id, String nom, String description) {
         this.id = id;
         this.nom = nom;
-        this.resume = resume;
-    }
-
-    public ArrayList<Qualite> getAllQualite(){
-        return DAOFactory.getQualiteDAO().getAll();
-    }
-
-    public String getResume() {
-        return resume;
-    }
-
-    public void setResume(String resume) {
-        this.resume = resume;
+        this.description = description;
     }
 
     public Integer getId() {
@@ -55,7 +42,14 @@ public class Qualite {
         this.nom = nom;
     }
 
-    public IntegerProperty idProperty(){
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public IntegerProperty idPorperty(){
         return new SimpleIntegerProperty(id);
     }
 
@@ -63,16 +57,20 @@ public class Qualite {
         return new SimpleStringProperty(nom);
     }
 
-    public StringProperty resumeProperty(){
-        return new SimpleStringProperty(resume);
+    public StringProperty descriptionProperty(){
+        return new SimpleStringProperty(description);
+    }
+
+    public ArrayList<Creation> getAllCreations(){
+        return DAOFactory.getCreationDAO().getAll();
     }
 
     @Override
     public String toString() {
-        return "Qualite{" +
+        return "Creation{" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
-                ", resume='" + resume + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

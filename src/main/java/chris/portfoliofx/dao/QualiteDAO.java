@@ -27,7 +27,7 @@ public class QualiteDAO extends DAO<Qualite, QualiteSearch>{
             String str = "SELECT * FROM qualite order by nom";
             rs = st.executeQuery(str);
             while(rs.next()){
-                listeQualite.add(new Qualite(rs.getInt(1),rs.getString(2)));
+                listeQualite.add(new Qualite(rs.getInt(1),rs.getString(2),rs.getString(3)));
             }
             rs.close();
         }catch (Exception e){

@@ -37,10 +37,14 @@ public class MenuController {
     private TableColumn<Qualite, String> qualiteColumn;
 
     @FXML
+    private TableColumn<Qualite, String> exempleColumn;
+
+    @FXML
     public void initialize(){
         ServiceQualite serviceQualite = new ServiceQualite();
         qualiteTable.setItems(FXCollections.observableArrayList(serviceQualite.getLabelQualiteFiltre()));
         qualiteColumn.setCellValueFactory(CellData -> CellData.getValue().nomProperty());
+        exempleColumn.setCellValueFactory(CellData->CellData.getValue().resumeProperty());
     }
 
 
@@ -72,6 +76,7 @@ public class MenuController {
            loader.setLocation(Main.class.getResource("Formation.fxml"));
            AnchorPane anchorPane = loader.load();
            Scene scene = new Scene(anchorPane);
+           scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
            Stage stage = new Stage();
            stage.setTitle("Formations");
            stage.initModality(Modality.APPLICATION_MODAL);
@@ -91,6 +96,7 @@ public class MenuController {
             loader.setLocation(Main.class.getResource("Competence.fxml"));
             AnchorPane anchorPane = loader.load();
             Scene scene = new Scene(anchorPane);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             Stage stage = new Stage();
             stage.setTitle("Compétences et outils");
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -110,6 +116,7 @@ public class MenuController {
             loader.setLocation(Main.class.getResource("Creation.fxml"));
             AnchorPane anchorPane = loader.load();
             Scene scene = new Scene(anchorPane);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             Stage stage = new Stage();
             stage.setTitle("Créations");
             stage.initModality(Modality.APPLICATION_MODAL);

@@ -16,22 +16,17 @@ public class DAOFactory {
     public static FormationDAO getFormationDAO(){
         return new FormationDAO(connexion);
     }
-//
-//     public static PlateformeDAO getPlateformeDAO() {
-//        return  new PlateformeDAO(connexion);
-//    }
-//
-//    public static GenreDAO getGenreDAO(){
-//        return new GenreDAO(connexion);
-//    }
-//
-//    public static RealisateurDAO getRealisateurDAO() {
-//        return  new RealisateurDAO(connexion);
-//    }
-//    public static FilmDAO getFilmDAO(){
-//        return new FilmDAO(connexion);
-//    }
-//    public static SerieDAO getSerieDAO(){
-//        return new SerieDAO(connexion);
-//    }
+
+     public static OutilDAO getOutilDAO() {
+        return  new OutilDAO(connexion);
+    }
+
+    public static TechnologieDAO getTechnologieDAO(){
+        return new TechnologieDAO(connexion);
+    }
+
+    public static CreationDAO getCreationDAO() {
+        return  new CreationDAO(connexion);
+    }
+
 }

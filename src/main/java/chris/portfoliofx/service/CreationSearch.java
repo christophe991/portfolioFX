@@ -1,16 +1,9 @@
 package chris.portfoliofx.service;
 
-public class QualiteSearch {
+public class CreationSearch {
     private Integer id;
     private String nom;
-
-    private String resume;
-
-    public QualiteSearch(Integer id, String nom, String resume) {
-        this.id = id;
-        this.nom = nom;
-        this.resume = resume;
-    }
+    private String description;
 
     public Integer getId() {
         return id;
@@ -28,11 +21,11 @@ public class QualiteSearch {
         this.nom = nom;
     }
 
-    public String getResume() {
-        return resume;
+    public String getDescription() {
+        return description;
     }
 
-    public void setResume(String resume) {
-        this.resume = resume;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
